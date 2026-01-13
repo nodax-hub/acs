@@ -19,7 +19,7 @@
 
 - Просмотр, добавление, редактирование и удаление записей (CRUD) для сущностей:
   - `categories` (Категория)
-  - `jewelry` (Украшение), привязанные к автору (FK `author_id`)
+  - `jewelry` (Украшение), привязанные к автору (FK `category_id`)
 
 ---
 
@@ -54,8 +54,8 @@
 Откройте браузер и перейдите по адресу:  
 `http://localhost:8080/lab/`
 
-- Страница Authors: `http://localhost:8080/lab/categories.xhtml`
-- Страница Books: `http://localhost:8080/lab/jewelry.xhtml`
+- Страница Categories: `http://localhost:8080/lab/categories.xhtml`
+- Страница Jewelry: `http://localhost:8080/lab/jewelry.xhtml`
 
 **Административная панель GlassFish:**
 

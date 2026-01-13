@@ -16,8 +16,8 @@ public class Jewelry implements Serializable {
     private String title;
 
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    @JoinColumn(name = "author_id", nullable = false)
-    private Category author;
+    @JoinColumn(name = "category_id", nullable = false)
+    private Category category;
 
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
@@ -25,6 +25,6 @@ public class Jewelry implements Serializable {
     public String getTitle() { return title; }
     public void setTitle(String title) { this.title = title; }
 
-    public Category getAuthor() { return author; }
-    public void setAuthor(Category author) { this.author = author; }
+    public Category getCategory() { return category; }
+    public void setCategory(Category category) { this.category = category; }
 }

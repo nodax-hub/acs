@@ -1,11 +1,14 @@
+DROP TABLE IF EXISTS jewelry CASCADE;
+DROP TABLE IF EXISTS categories CASCADE;
+
 CREATE TABLE IF NOT EXISTS categories (
   id BIGSERIAL PRIMARY KEY,
   full_name VARCHAR(200) NOT NULL,
-  CONSTRAINT uq_authors_full_name UNIQUE (full_name)
+  CONSTRAINT uq_categories_full_name UNIQUE (full_name)
 );
 
 CREATE TABLE IF NOT EXISTS jewelry (
   id BIGSERIAL PRIMARY KEY,
   title VARCHAR(250) NOT NULL,
-  author_id BIGINT NOT NULL REFERENCES categories(id) ON DELETE CASCADE,
+  category_id BIGINT NOT NULL REFERENCES categories(id) ON DELETE CASCADE
 );

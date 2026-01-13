@@ -14,7 +14,7 @@ public class JewelryService {
     // Найти все украшения
     public List<Jewelry> findAll() {
         return em.createQuery(
-                "select b from Jewelry b join fetch b.author order by b.id",
+                "select b from Jewelry b join fetch b.category order by b.id",
                 Jewelry.class
         ).getResultList();
     }

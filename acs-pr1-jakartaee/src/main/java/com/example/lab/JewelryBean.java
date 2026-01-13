@@ -27,7 +27,7 @@ public class JewelryBean implements Serializable {
     private Long id;
 
     // выбранная категория в форме
-    private Long authorId;
+    private Long categoryId;
 
     @PostConstruct
     public void init() {
@@ -44,10 +44,10 @@ public class JewelryBean implements Serializable {
         if (id != null) {
             Jewelry existing = jewelryService.find(id);
             form = (existing != null) ? existing : new Jewelry();
-            authorId = (form.getAuthor() != null) ? form.getAuthor().getId() : null;
+            categoryId = (form.getCategory() != null) ? form.getCategory().getId() : null;
         } else {
             form = new Jewelry();
-            authorId = null;
+            categoryId = null;
         }
     }
 
@@ -60,9 +60,9 @@ public class JewelryBean implements Serializable {
     }
 
     public String save() {
-        if (authorId != null) {
-            Category a = categoryService.find(authorId);
-            form.setAuthor(a);
+        if (categoryId != null) {
+            Category a = categoryService.find(categoryId);
+            form.setCategory(a);
         }
 
         if (form.getId() == null) {
@@ -88,6 +88,6 @@ public class JewelryBean implements Serializable {
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 
-    public Long getAuthorId() { return authorId; }
-    public void setAuthorId(Long authorId) { this.authorId = authorId; }
+    public Long getCategoryId() { return categoryId; }
+    public void setCategoryId(Long categoryId) { this.categoryId = categoryId; }
 }

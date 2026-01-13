@@ -22,7 +22,7 @@
         <h:inputText value="#{jewelryBean.form.title}" required="true"/>
 
         <h:outputLabel value="Категория:"/>
-        <h:selectOneMenu value="#{jewelryBean.authorId}" required="true">
+        <h:selectOneMenu value="#{jewelryBean.categoryId}" required="true">
             <f:selectItem itemLabel="-- выбери категорию --" itemValue="#{null}"/>
             <f:selectItems value="#{jewelryBean.categories}"
                            var="a"
