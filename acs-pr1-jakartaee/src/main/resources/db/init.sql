@@ -1,6 +1,6 @@
-INSERT INTO categories(full_name, birth_year) VALUES
-('Фёдор Достоевский', 1821),
-('Агата Кристи', 1890);
+INSERT INTO categories(full_name) VALUES
+('Фёдор Достоевский'),
+('Агата Кристи');
 
 INSERT INTO jewelry(title, isbn, published_year, price, author_id) VALUES
 (

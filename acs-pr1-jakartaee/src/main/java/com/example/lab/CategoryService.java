@@ -22,12 +22,12 @@ public class CategoryService {
         return em.find(Category.class, id);
     }
 
-    // Добавить нового украшение
+    // Добавить новое украшение
     public void create(Category a) {
         em.persist(a);
     }
 
-    // Обновить данные украшение
+    // Обновить данные украшения
     public Category update(Category a) {
         return em.merge(a);
     }

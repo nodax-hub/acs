@@ -1,7 +1,6 @@
 CREATE TABLE IF NOT EXISTS categories (
   id BIGSERIAL PRIMARY KEY,
   full_name VARCHAR(200) NOT NULL,
-  birth_year INT,
   CONSTRAINT uq_authors_full_name UNIQUE (full_name)
 );
 
