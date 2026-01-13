@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:f="jakarta.faces.core">
+<h:head>
+    <title>Категория</title>
+</h:head>
+
+<h:body>
+
+<f:metadata>
+    <f:viewParam name="id" value="#{categoryBean.id}" />
+    <f:viewAction action="#{categoryBean.load}" />
+</f:metadata>
+
+<h2>Категория</h2>
+
+<h:form>
+    <h:panelGrid columns="2" cellpadding="6">
+        <h:outputLabel value="ФИО:"/>
+        <h:inputText value="#{categoryBean.form.fullName}" required="true"/>
+
+        <h:outputLabel value="Год рождения:"/>
+        <h:inputText value="#{categoryBean.form.birthYear}"/>
+    </h:panelGrid>
+
+    <br/>
+    <h:commandButton value="Сохранить" action="#{categoryBean.save()}"/>
+    <h:link value="Назад" outcome="categories.xhtml" style="margin-left:10px;"/>
+</h:form>
+
+</h:body>
+</html>

@@ -1,0 +1,49 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-lab_db}
+      POSTGRES_USER: ${POSTGRES_USER:-lab_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-lab_pass}
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+      - ./db/init.sql:/docker-entrypoint-initdb.d/01-init.sql:ro
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-lab_user} -d ${POSTGRES_DB:-lab_db}" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - lab_net
+
+  app:
+    build: .
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DB_HOST: db
+      DB_PORT: "5432"
+      DB_NAME: ${POSTGRES_DB:-lab_db}
+      DB_USER: ${POSTGRES_USER:-lab_user}
+      DB_PASSWORD: ${POSTGRES_PASSWORD:-lab_pass}
+
+      APP_CONTEXT: lab
+      ADMIN_USER: ${ADMIN_USER:-admin}
+      ADMIN_PASS: ${ADMIN_PASS:-admin}
+    ports:
+      - "8080:8080"
+      - "8081:4848"
+    networks:
+      - lab_net
+
+volumes:
+  pg_data:
+
+networks:
+  lab_net:
+    driver: bridge
