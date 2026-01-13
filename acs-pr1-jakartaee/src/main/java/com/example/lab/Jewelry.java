@@ -15,11 +15,6 @@ public class Jewelry implements Serializable {
     @Column(nullable = false, length = 250)
     private String title;
 
-    @Column(name = "published_year")
-    private Integer publishedYear;
-
-    private BigDecimal price;
-
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     @JoinColumn(name = "author_id", nullable = false)
     private Category author;
@@ -29,12 +24,6 @@ public class Jewelry implements Serializable {
 
     public String getTitle() { return title; }
     public void setTitle(String title) { this.title = title; }
-
-    public Integer getPublishedYear() { return publishedYear; }
-    public void setPublishedYear(Integer publishedYear) { this.publishedYear = publishedYear; }
-
-    public BigDecimal getPrice() { return price; }
-    public void setPrice(BigDecimal price) { this.price = price; }
 
     public Category getAuthor() { return author; }
     public void setAuthor(Category author) { this.author = author; }

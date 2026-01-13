@@ -7,7 +7,5 @@ CREATE TABLE IF NOT EXISTS categories (
 CREATE TABLE IF NOT EXISTS jewelry (
   id BIGSERIAL PRIMARY KEY,
   title VARCHAR(250) NOT NULL,
-  published_year INT,
-  price NUMERIC(10,2),
   author_id BIGINT NOT NULL REFERENCES categories(id) ON DELETE CASCADE,
 );

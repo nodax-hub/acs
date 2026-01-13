@@ -21,12 +21,6 @@
         <h:outputLabel value="Название:"/>
         <h:inputText value="#{jewelryBean.form.title}" required="true"/>
 
-        <h:outputLabel value="Год публикации:"/>
-        <h:inputText value="#{jewelryBean.form.publishedYear}"/>
-
-        <h:outputLabel value="Цена:"/>
-        <h:inputText value="#{jewelryBean.form.price}"/>
-
         <h:outputLabel value="Категория:"/>
         <h:selectOneMenu value="#{jewelryBean.authorId}" required="true">
             <f:selectItem itemLabel="-- выбери категорию --" itemValue="#{null}"/>
