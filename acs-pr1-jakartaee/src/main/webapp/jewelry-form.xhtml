@@ -21,13 +21,19 @@
         <h:outputLabel value="Название:"/>
         <h:inputText value="#{jewelryBean.form.title}" required="true"/>
 
+        <h:outputLabel value="Материал:"/>
+        <h:inputText value="#{jewelryBean.form.material}" required="true"/>
+
+        <h:outputLabel value="Цена:"/>
+        <h:inputText value="#{jewelryBean.form.price}"/>
+
         <h:outputLabel value="Категория:"/>
         <h:selectOneMenu value="#{jewelryBean.categoryId}" required="true">
             <f:selectItem itemLabel="-- выбери категорию --" itemValue="#{null}"/>
             <f:selectItems value="#{jewelryBean.categories}"
                            var="a"
                            itemValue="#{a.id}"
-                           itemLabel="#{a.fullName}"/>
+                           itemLabel="#{a.name}"/>
         </h:selectOneMenu>
 
     </h:panelGrid>

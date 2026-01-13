@@ -31,12 +31,10 @@ public class DbInit {
 
         try (Connection c = ds.getConnection()) {
             // Если таблицы есть и категория уже есть — пропускаем (чтобы не дублировать)
-            if (tableExists(c, "categories") && hasAnyRows(c, "categories")) {
-                log.info("DBINIT: skip (categories already has data)");
-                return;
-            }
-
-            runSqlFromResource("/db/schema.sql", c);
+//            if (tableExists(c, "categories") && hasAnyRows(c, "categories")) {
+//                log.info("DBINIT: skip (categories already has data)");
+//                return;
+//            }
 
             runSqlFromResource("/db/init.sql", c);
 
