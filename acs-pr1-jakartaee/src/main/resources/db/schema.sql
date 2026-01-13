@@ -7,9 +7,7 @@ CREATE TABLE IF NOT EXISTS categories (
 CREATE TABLE IF NOT EXISTS jewelry (
   id BIGSERIAL PRIMARY KEY,
   title VARCHAR(250) NOT NULL,
-  isbn VARCHAR(32),
   published_year INT,
   price NUMERIC(10,2),
   author_id BIGINT NOT NULL REFERENCES categories(id) ON DELETE CASCADE,
-  CONSTRAINT uq_books_isbn UNIQUE (isbn)
 );

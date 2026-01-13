@@ -21,9 +21,6 @@
         <h:outputLabel value="Название:"/>
         <h:inputText value="#{jewelryBean.form.title}" required="true"/>
 
-        <h:outputLabel value="ISBN:"/>
-        <h:inputText value="#{jewelryBean.form.isbn}"/>
-
         <h:outputLabel value="Год публикации:"/>
         <h:inputText value="#{jewelryBean.form.publishedYear}"/>
 
@@ -32,7 +29,7 @@
 
         <h:outputLabel value="Категория:"/>
         <h:selectOneMenu value="#{jewelryBean.authorId}" required="true">
-            <f:selectItem itemLabel="-- выбери украшение --" itemValue="#{null}"/>
+            <f:selectItem itemLabel="-- выбери категорию --" itemValue="#{null}"/>
             <f:selectItems value="#{jewelryBean.categories}"
                            var="a"
                            itemValue="#{a.id}"

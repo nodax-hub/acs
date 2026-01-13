@@ -15,8 +15,6 @@ public class Jewelry implements Serializable {
     @Column(nullable = false, length = 250)
     private String title;
 
-    private String isbn;
-
     @Column(name = "published_year")
     private Integer publishedYear;
 
@@ -31,9 +29,6 @@ public class Jewelry implements Serializable {
 
     public String getTitle() { return title; }
     public void setTitle(String title) { this.title = title; }
-
-    public String getIsbn() { return isbn; }
-    public void setIsbn(String isbn) { this.isbn = isbn; }
 
     public Integer getPublishedYear() { return publishedYear; }
     public void setPublishedYear(Integer publishedYear) { this.publishedYear = publishedYear; }
