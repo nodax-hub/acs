@@ -1,0 +1,56 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: acs-postgres
+    environment:
+      POSTGRES_DB: acs_pass
+      POSTGRES_USER: acs_user
+      POSTGRES_PASSWORD: acs_pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  artemis:
+    image: apache/activemq-artemis:2.41.0-alpine
+    container_name: acs-artemis
+    environment:
+      ARTEMIS_USER: admin
+      ARTEMIS_PASSWORD: admin
+    ports:
+      - "61616:61616"
+      - "8161:8161"
+
+  mailhog:
+    image: mailhog/mailhog
+    container_name: acs-mailhog
+    ports:
+      - "1025:1025"
+      - "8025:8025"
+
+  app:
+    build: .
+    container_name: acs-app
+    depends_on:
+      - postgres
+      - artemis
+      - mailhog
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/acs_pass
+      SPRING_DATASOURCE_USERNAME: acs_user
+      SPRING_DATASOURCE_PASSWORD: acs_pass
+
+      SPRING_ARTEMIS_MODE: native
+      SPRING_ARTEMIS_BROKER_URL: tcp://artemis:61616
+      SPRING_ARTEMIS_USER: admin
+      SPRING_ARTEMIS_PASSWORD: admin
+
+      SPRING_MAIL_HOST: mailhog
+      SPRING_MAIL_PORT: 1025
+
+volumes:
+  pgdata:
