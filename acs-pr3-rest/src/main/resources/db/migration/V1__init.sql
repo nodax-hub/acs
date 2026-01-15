@@ -1,23 +1,18 @@
-DROP TABLE IF EXISTS books;
-DROP TABLE IF EXISTS authors;
-
-CREATE TABLE authors (
-  id BIGSERIAL PRIMARY KEY,
-  full_name VARCHAR(200) NOT NULL,
-  birth_year INT
+CREATE TABLE categories
+(
+    id   BIGSERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL
 );
 
-CREATE TABLE books (
-  id BIGSERIAL PRIMARY KEY,
-  title VARCHAR(300) NOT NULL,
-  published_year INT,
-  author_id BIGINT NOT NULL REFERENCES authors(id) ON DELETE RESTRICT
+CREATE TABLE jewelry
+(
+    id          BIGSERIAL PRIMARY KEY,
+    title       VARCHAR(255) NOT NULL,
+    material    VARCHAR(100),
+    price       DECIMAL(10, 2),
+    category_id BIGINT NOT NULL,
+    CONSTRAINT fk_jewelry_category
+        FOREIGN KEY (category_id)
+            REFERENCES categories (id)
+            ON DELETE CASCADE
 );
-
-INSERT INTO authors(full_name, birth_year) VALUES
-  ('Лев Толстой', 1828),
-  ('Фёдор Достоевский', 1821);
-
-INSERT INTO books(title, published_year, author_id) VALUES
-  ('Война и мир', 1869, 1),
-  ('Преступление и наказание', 1866, 2);
