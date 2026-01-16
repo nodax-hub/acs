@@ -199,9 +199,6 @@ http://localhost:8080/api/jewelry?format=xml
 
 ## Скриншоты
 
-### Главная страница
-![Главная страница](docs/screenshots/home.png)
-
 ### XML Categories (с XSL)
 ![Categories XML](docs/screenshots/categories-xml.png)
 
