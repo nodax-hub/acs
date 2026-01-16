@@ -203,10 +203,10 @@ http://localhost:8080/api/jewelry?format=xml
 ![Главная страница](docs/screenshots/home.png)
 
 ### XML Categories (с XSL)
-![Authors XML](docs/screenshots/categories-xml.png)
+![Categories XML](docs/screenshots/categories-xml.png)
 
 ### XML Jewelry (с XSL)
-![Books XML](docs/screenshots/jewelry-xml.png)
+![Jewelry XML](docs/screenshots/jewelry-xml.png)
 
 ### Swagger UI
 
