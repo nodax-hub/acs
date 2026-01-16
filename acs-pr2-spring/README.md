@@ -150,19 +150,19 @@ server.port=8081
 ## Скриншоты
 
 ### Главная страница
-![Страница Home](docs/screenshots/home.jpg)
+![Страница Home](Screenshots/home.jpg)
 
 ### Категории
-![Страница Categories](docs/screenshots/categories.jpg)
+![Страница Categories](Screenshots/categories.jpg)
 
 ### Украшения
-![Страница Jewelry](docs/screenshots/jewelry.jpg)
+![Страница Jewelry](Screenshots/jewelry.jpg)
 
 ### Создание украшения
-![Страница New Jewelry](docs/screenshots/new_jewelry.jpg)
+![Страница New Jewelry](Screenshots/new_jewelry.jpg)
 
 ### Проверка созданного украшения
-![Страница Check New Jewelry](docs/screenshots/check_new_jewelry.jpg)
+![Страница Check New Jewelry](Screenshots/check_new_jewelry.jpg)
 
 
 
