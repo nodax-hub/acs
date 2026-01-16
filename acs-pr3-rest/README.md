@@ -200,15 +200,15 @@ http://localhost:8080/api/jewelry?format=xml
 ## Скриншоты
 
 ### XML Categories (с XSL)
-![Categories XML](docs/screenshots/categories-xml.png)
+![Categories XML](Screenshots/categories-xml.png)
 
 ### XML Jewelry (с XSL)
-![Jewelry XML](docs/screenshots/jewelry-xml.png)
+![Jewelry XML](Screenshots/jewelry-xml.png)
 
 ### Swagger UI
 
-![Swagger UI](docs/screenshots/swagger.png)
+![Swagger UI](Screenshots/swagger.png)
 
 ### Swagger UI (пример POST запроса)
 
-![Swagger (пример запроса)](docs/screenshots/swagger-example.png)
+![Swagger (пример запроса)](Screenshots/swagger-example.png)
